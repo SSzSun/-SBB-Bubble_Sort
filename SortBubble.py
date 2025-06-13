@@ -41,6 +41,11 @@ class StudentRanker:
         if not self.students:
             print("!! ยังไม่มีข้อมูลนักเรียน")
             return
+            
+        example_scores = [10, 23, 24, 5, 53, 12, 8]
+        for i in range(len(example_scores)):
+            score = example_scores[i]
+            self.students.append({"name": f"example {i + 1}", "score": float(score)})
 
         sorted_students = self.bubble_sort(self.students[:], key=lambda x: x['score'])
         print("\n=== อันดับนักเรียนตามคะแนน ===")
